@@ -1,7 +1,7 @@
 // FUNÇÃO PARA CODIFICAR A MENSAGEM
 function cripto() 
     {
-        texto = document.getElementById('text-area').value;  
+        var texto = document.getElementById('text-area').value;  
         var textoCripto = "";   
 
         if(texto != ''){
@@ -16,9 +16,9 @@ function cripto()
     }  
 
 //FUNÇÃO PARA DESCODIFICAR A MENSAGEM
-function descripto () 
+function descripto() 
     {
-        var texto = document.getElementById("msg-criptografada").innerHTML;    
+        var texto = document.getElementById('text-area').value;    
         var textoDescripto = "";
     
         textoDescripto = texto.replaceAll('enter', 'e').replaceAll('imes', 'i').replaceAll('ai', 'a').replaceAll('ober', 'o').replaceAll('ufat', 'u').replaceAll('two', 'y');
@@ -31,7 +31,7 @@ function descripto ()
 //FUNÇÃO PARA COPIAR A MENSAGEM CODIFICADA
 function copiar() 
     {
-        let textoCopiado = document.getElementById("msg-criptografada").innerHTML;
+        var textoCopiado = document.getElementById("msg-criptografada").innerHTML;
         var mensagem = document.getElementById('text-criptografada').innerHTML;
 
         if(mensagem != 'Mensagem copiada')
