@@ -4,7 +4,8 @@ function cripto()
         var texto = document.getElementById('text-area').value;  
         var textoCripto = "";   
 
-        if(texto != ''){
+        if(texto != '')
+        {
             textoCripto = texto.replaceAll('e', 'enter').replaceAll('i', 'imes').replaceAll('a', 'ai').replaceAll('o', 'ober').replaceAll('u', 'ufat').replaceAll('y', 'two');
             
             document.getElementById("msg-criptografada").innerHTML = textoCripto;
@@ -20,11 +21,17 @@ function descripto()
     {
         var texto = document.getElementById('text-area').value;    
         var textoDescripto = "";
-    
-        textoDescripto = texto.replaceAll('enter', 'e').replaceAll('imes', 'i').replaceAll('ai', 'a').replaceAll('ober', 'o').replaceAll('ufat', 'u').replaceAll('two', 'y');
+        if(texto != '')
+        {   
+            textoDescripto = texto.replaceAll('enter', 'e').replaceAll('imes', 'i').replaceAll('ai', 'a').replaceAll('ober', 'o').replaceAll('ufat', 'u').replaceAll('two', 'y');
 
-        document.getElementById("msg-criptografada").innerHTML = textoDescripto;
-        document.getElementById('text-criptografada').innerHTML = "";
+            document.getElementById("msg-criptografada").innerHTML = textoDescripto;
+            document.getElementById('text-criptografada').innerHTML = "";
+            document.querySelector('img.msg-aviso').style.display = 'none';
+            document.getElementById('msg-aviso').innerHTML = "";
+            document.getElementById('msg-aviso2').innerHTML = "";
+        }
+        
         
     }
 
