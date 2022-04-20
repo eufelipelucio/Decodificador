@@ -21,7 +21,7 @@ function descripto()
     {
         var texto = document.getElementById('text-area').value;    
         var textoDescripto = "";
-        if(texto != '')
+        if(texto != "")
         {   
             textoDescripto = texto.replaceAll('enter', 'e').replaceAll('imes', 'i').replaceAll('ai', 'a').replaceAll('ober', 'o').replaceAll('ufat', 'u').replaceAll('two', 'y');
 
