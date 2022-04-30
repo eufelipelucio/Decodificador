@@ -24,7 +24,7 @@ body {
 .main{
     width:100%;
     display:flex;
-    justify-content:space-between;
+    justify-content:space-around;
 }
 .text-area{
     -webkit-box-sizing: border-box;
@@ -54,7 +54,8 @@ body {
     align-content: stretch;
     flex-direction: column;
     justify-content: space-between;
-    width:50%;
+    width:100%;
+    padding-left:3rem;
 }
 .aviso{
     display:flex;
@@ -66,8 +67,8 @@ body {
 
 }
 .div-logo-alura{
-    margin-top:40px;
-    margin-left:80px;
+    padding-top:3%;
+    padding-left:3%;
 }
 .section-msg-codificada{
     width:400px;
@@ -75,7 +76,7 @@ body {
     background-color:var(--color-white);
     border-radius:32px;
     display: inline-flex;
-    margin:40px 40px 0 0 ;
+    margin-top:5rem;
     flex-wrap: wrap;
     align-content: stretch;
     flex-direction: column;
@@ -153,8 +154,7 @@ body {
     margin-top:2rem;
     width:100%;
     height:80%;
-    display: inline-block;
-    flex-wrap: wrap;
+    display: flex;
     align-content: center;
     flex-direction: column;
     justify-content: space-around;
@@ -162,7 +162,6 @@ body {
 
 }
 .mensagens{
-    display:flex;
     font-family:var(--font-primary);
     font-size:16px;
     color:var(--color-gray);
@@ -178,10 +177,10 @@ body {
     border-radius:32px;
 }
 
-@media only screen and ( max-width: 1270px)
+@media only screen and ( max-width: 1220px)
 {
     .main{
-        display:flexbox;
+        display:flex;
         flex-direction:column;
     }
     .div-logo-alura{
@@ -189,7 +188,8 @@ body {
         margin-right:        
     }    
     .section-text-area{
-        margin:80px auto;
+        margin:80px auto 0;
+        padding:0;
         width:90%;
         height:50vh;
     }
@@ -197,13 +197,12 @@ body {
         padding:0;
         margin-left:3rem;
     }
-    .section-buttons{
-        justify-content:space-between;
-    }
+    
     .section-msg-codificada{
-        margin:40px auto;
+        display:flex;
+        margin:10px auto;
         width:90%;
-        height:40vh;
+        height:100%;
     }
     .mensagens{
         margin-top:0;
@@ -229,21 +228,37 @@ body {
 {   
     .text-area{
         width:90%;
-        height:18rem;
+        height:10rem;
     }
     .section-buttons{
-        display:flexbox;
+        display:flex;
         flex-direction:column;
-        justify-content:center;
+        justify-content:space-between;
         align-items:center;
         height:160px;
         width:80%;
         margin:0 auto;
     }
     .section-text-area{
-        margin:80px auto;
+        display:block;
     }
     .aviso-elementos{
         width:100%;
+    }
+    .aviso{
+        margin:10px auto;
+    }
+}
+
+@media only screen and ( max-width:450px)
+
+{
+    
+    .copiarBttn{
+        margin:0 auto 20px;
+        width:80%;
+    }
+    .section-msg-codificada{
+        margin-top:8rem;
     }
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +8,10 @@
     <title>Decodificador-Alura Challenge</title>
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <script src="index.js"></script>
 </head>
+
 <body>
     <main class="main">
         <div class="div-logo-alura">
@@ -18,31 +19,32 @@
         </div>
         <div class="section-text-area">
             <div>
-                <textarea class="text-area" id="text-area" placeholder="Digite seu texto" ></textarea>
+                <textarea class="text-area" id="text-area" placeholder="Digite seu texto"></textarea>
             </div>
             <div class="aviso-elementos">
-                <div  class="aviso">
-                    <img src="imagens/Alerta.jpg" alt="Alerta Imagem"/>
+                <div class="aviso">
+                    <img src="imagens/Alerta.jpg" alt="Alerta Imagem" />
                     <h3>Apenas letras minúsculas e sem acento.</h3>
                 </div>
                 <div class="section-buttons">
-                    <button id="criptobtn" onclick="cripto()"  class="button-criptografar">Criptografar</button>
-                    <button id="descriptobtn" onclick="descripto()" class="button-descriptografar">Descriptografar</button>
+                    <button id="criptobtn" class="button-criptografar">Criptografar</button>
+                    <button id="descriptobtn" class="button-descriptografar">Descriptografar</button>
                 </div>
             </div>
         </div>
         <div class="section-msg-codificada">
-            <div class="mensagens" >
-                <h3 class="msg-cripto" id="msg-criptografada"></h3>
-                <img class="msg-aviso" class="msg-aviso" src="imagens/High-quality-products.jpg" alt="Nenhuma mensagem encontrada" />
-                <h4 id="msg-aviso">Nenhuma mensagem encontrada</h4>
-                <p id="msg-aviso2">Digite um texto que você deseja criptografar ou descriptografar.</p>
-                <h3 class="msg-cripto" id="text-criptografada"></h3>
+            <div class="mensagens">
+                <p class="msg-cripto" id="msg-criptografada"></p>
+                <img class="msg-aviso" class="msg-aviso" src="imagens/High-quality-products.jpg"
+                    alt="Nenhuma mensagem encontrada" />
+                <p id="text-criptografada"></p>
             </div>
             <div class="copiarBttn">
-                <button  id="copiar" onclick="copiar()">Copiar</button>
+                <button id="copiar">Copiar</button>
             </div>
         </div>
-    </main> 
+    </main>
+    <script src="index.js"></script>
 </body>
+
 </html>

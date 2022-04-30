@@ -1,49 +1,90 @@
+const inputText = document.getElementById("text-area");
+const textoCripto = document.getElementById("msg-criptografada");
+const img = document.querySelector("img.msg-aviso");
+const mensagem = document.getElementById("text-criptografada");
+
+const btnCripto = document.getElementById("criptobtn");
+const btnDescripto = document.getElementById("descriptobtn");
+const btnCopy = document.getElementById("copiar");
+
+btnCripto.addEventListener("click", Criptografar);
+btnDescripto.addEventListener("click", Descriptografar);
+btnCopy.addEventListener("click", Copiar);
+
 // FUNÇÃO PARA CODIFICAR A MENSAGEM
-function cripto() 
-    {
-        var texto = document.getElementById('text-area').value;  
-        var textoCripto = "";   
+function Criptografar() {
+    //Pega o valor do textarea
+    var texto = inputText.value;
 
-        if(texto != '')
-        {
-            textoCripto = texto.replaceAll('e', 'enter').replaceAll('i', 'imes').replaceAll('a', 'ai').replaceAll('o', 'ober').replaceAll('u', 'ufat').replaceAll('y', 'two');
-            
-            document.getElementById("msg-criptografada").innerHTML = textoCripto;
-            document.querySelector('img.msg-aviso').style.display = 'none';
-            document.getElementById('msg-aviso').innerHTML = "";
-            document.getElementById('msg-aviso2').innerHTML = "";
-        }   
-        
-    }  
+    //Cria variavel para armazenar o texto criptografado
+    var encripto;
 
-//FUNÇÃO PARA DESCODIFICAR A MENSAGEM
-function descripto() 
-    {
-        var texto = document.getElementById('text-area').value;    
-        var textoDescripto = "";
-        if(texto != "")
-        {   
-            textoDescripto = texto.replaceAll('enter', 'e').replaceAll('imes', 'i').replaceAll('ai', 'a').replaceAll('ober', 'o').replaceAll('ufat', 'u').replaceAll('two', 'y');
+    //Verifica se o texto está vazio
+    if (texto != "") {
+        //Cria uma nova string na variavel encripto com o texto criptografada
+        encripto = texto
+            .replaceAll("e", "enter")
+            .replaceAll("i", "imes")
+            .replaceAll("a", "ai")
+            .replaceAll("o", "ober")
+            .replaceAll("u", "ufat")
+            .replaceAll("y", "two");
 
-            document.getElementById("msg-criptografada").innerHTML = textoDescripto;
-            document.getElementById('text-criptografada').innerHTML = "";
-            document.querySelector('img.msg-aviso').style.display = 'none';
-            document.getElementById('msg-aviso').innerHTML = "";
-            document.getElementById('msg-aviso2').innerHTML = "";
-        }
-        
-        
+        //Exibe o texto criptografado
+        textoCripto.innerHTML = encripto;
+
+        //Remove a img de aviso
+        img.style.display = "none";
+
+        //Limpa o texto do textarea
+        inputText.value = "";
+    } else {
+        //Alerta o usuário que o texto está vazio
+        alert("Digite uma mensagem para ser criptografada");
     }
+    //Limpa o alerta de mensagem copiada
+    mensagem.innerHTML = "";
+}
+
+// FUNÇÃO PARA DESCRIPTOGRAFAR A MENSAGEM
+function Descriptografar() {
+    //Pega o valor do textarea
+    var texto = inputText.value;
+
+    //Cria variavel para armazenar o texto Descriptografado
+    var descripto;
+
+    //Verifica se o texto está vazio
+    if (texto != "") {
+        //Cria uma nova string na variavel descripto com o texto descriptografada
+        descripto = texto
+            .replaceAll("enter", "e")
+            .replaceAll("imes", "i")
+            .replaceAll("ai", "a")
+            .replaceAll("ober", "o")
+            .replaceAll("ufat", "u")
+            .replaceAll("two", "y");
+
+        textoCripto.innerHTML = descripto;
+        img.style.display = "none";
+    }
+    //Limpa o alerta de mensagem copiada
+    mensagem.innerHTML = "";
+}
 
 //FUNÇÃO PARA COPIAR A MENSAGEM CODIFICADA
-function copiar() 
-    {
-        var textoCopiado = document.getElementById("msg-criptografada").innerHTML;
-        var mensagem = document.getElementById('text-criptografada').innerHTML;
+function Copiar() {
+    //Pega o valor do texto criptografado/Descriptografado
+    var textoCopiado = textoCripto.innerHTML;
 
-        if(mensagem != 'Mensagem copiada')
-        {
-            navigator.clipboard.writeText(textoCopiado);
-            document.getElementById('text-criptografada').innerHTML = 'Mensagem copiada';
-        } 
+    if (textoCopiado.length > 0) {
+        //Copia o texto criptografado
+        navigator.clipboard.writeText(textoCopiado);
+
+        //Exibe mensagem de texto copiado
+        mensagem.innerHTML = "Mensagem copiada";
+
+        //limpa o texto criptografado
+        textoCripto.innerHTML = "";
     }
+}
