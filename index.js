@@ -6,6 +6,7 @@ const mensagem = document.getElementById("text-criptografada");
 const btnCripto = document.getElementById("criptobtn");
 const btnDescripto = document.getElementById("descriptobtn");
 const btnCopy = document.getElementById("copiar");
+const msgAviso = document.querySelector(".mensagem-aviso");
 
 btnCripto.addEventListener("click", Criptografar);
 btnDescripto.addEventListener("click", Descriptografar);
@@ -44,6 +45,7 @@ function Criptografar() {
     }
     //Limpa o alerta de mensagem copiada
     mensagem.innerHTML = "";
+    msgAviso.innetHTML = "";
 }
 
 // FUNÇÃO PARA DESCRIPTOGRAFAR A MENSAGEM
@@ -70,6 +72,8 @@ function Descriptografar() {
     }
     //Limpa o alerta de mensagem copiada
     mensagem.innerHTML = "";
+    msgAviso.innetHTML = "";
+    
 }
 
 //FUNÇÃO PARA COPIAR A MENSAGEM CODIFICADA
@@ -86,5 +90,7 @@ function Copiar() {
 
         //limpa o texto criptografado
         textoCripto.innerHTML = "";
+        msgAviso.innetHTML = "";
+        
     }
 }
