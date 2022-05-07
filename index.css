@@ -176,6 +176,11 @@ body {
     width:80%;
     border-radius:32px;
 }
+.mensagem-aviso{
+    font-size:24px;
+    font-weight:700;
+    color:var(--color-gray);
+}
 
 @media only screen and ( max-width: 1220px)
 {
